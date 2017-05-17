@@ -15,8 +15,10 @@
     <nav>
       <div class="nav-wrapper #01579b light-blue darken-4">
         <a href="#" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#"><i class ="material-icons assignment_ind"></i>Login</a></li>
+        <ul id="nav-mobile" class="right">
+          <li><a href="#"><i class ="medium material-icons">shopping_cart</i></a></li>
+          <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
+          <li><a href="#">Login</li>
         </ul>
       </div>
     </nav>
@@ -49,5 +51,3 @@
 
   </body>
 </html>
-
-    <!-- Dropdown Structure -->
