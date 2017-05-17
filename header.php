@@ -13,10 +13,10 @@
 <body>
 
     <nav>
-      <div class="nav-wrapper #29b6f6 light-blue lighten-1">
+      <div class="nav-wrapper #01579b light-blue darken-4">
         <a href="#" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">Login</a></li>
+          <li><a href="#"><i class ="material-icons assignment_ind"></i>Login</a></li>
         </ul>
       </div>
     </nav>
@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col s12">
           <nav>
-            <div class="nav-wrapper #29b6f6 light-blue lighten-1">
+            <div class="nav-wrapper #01579b light-blue darken-4">
               <form>
                 <div class="input-field">
                   <input id="search" type="search" required>
