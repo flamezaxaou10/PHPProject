@@ -14,9 +14,9 @@
 
     <nav>
       <div class="nav-wrapper #01579b light-blue darken-4">
-        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">Login</a></li>
+          <li><a href="#"><i class ="material-icons assignment_ind"></i>Login</a></li>
         </ul>
       </div>
     </nav>
