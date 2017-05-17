@@ -13,14 +13,33 @@
 <body>
 
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper #01579b light-blue darken-4">
         <a href="#" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-           <li><a href="#"><i class="material-icons">search</i></a></li>
-          <li><a href="collapsible.html">Login</a></li>
+          <li><a href="#">Login</a></li>
         </ul>
       </div>
     </nav>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <nav>
+            <div class="nav-wrapper #01579b light-blue darken-4">
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+
 
 
 
