@@ -9,27 +9,30 @@
         </div>
       </div>
       <div class="row center-align">
-        <div class="col s12 ">
+        <div class="row">
+          <div class="col s12 ">
+              <div class="col s4">
+
+              </div>
+              <div class="input-field col s4">
+                <input name="Username" type="text" class="validate">
+                <label for="Username">Username</label>
+              </div>
+              <div class="col s4">
+
+              </div>
+          </div>
+        </div>
+        <div class="row">
           <div class="col s4">
 
           </div>
           <div class="input-field col s4">
-            <input name="Username" type="text" class="validate">
-            <label for="Username">Username</label>
+            <input name="Password" type="text" class="validate">
+            <label for="Password">Password</label>
           </div>
         </div>
-        </div>
-        <div class="row center-align">
-          <div class="col s12 ">
-            <div class="col s4">
-
-            </div>
-            <div class="input-field col s4">
-              <input name="Password" type="text" class="validate">
-              <label for="Password">Password</label>
-            </div>
-          </div>
-        </div>
+      </div>
         <div class="row">
           <div class="col s12 ">
             <div class="col s4">
