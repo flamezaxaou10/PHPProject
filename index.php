@@ -45,18 +45,19 @@
         });
     </script>
 
+
     <div class="row">
-      <div class="col s3 "><p><img class="materialboxed" src="img/900x450.jpg" width="300"></p></div>
-      <div class="col s3"><p>s12 m4</p></div>
-      <div class="col s3"><p>s12 m4</p></div>
-      <div class="col s3"><p>s12 m4</p></div>
+      <div class="col s3 "><p><img class="materialboxed" src="img/cpu.jpg" width="300"></p></div>
+      <div class="col s3"><p><img class="materialboxed" src="img/case.jpg" width="300"></p></div>
+      <div class="col s3"><p><img class="materialboxed" src="img/fan.jpg" width="300"></p></div>
+      <div class="col s3"><p><img class="materialboxed" src="img/gc.jpg" width="300"></p></div>
     </div>
 
     <div class="row">
-      <div class="col s3 "><p><img src="img/900x450.jpg" width="300"></p></div>
-      <div class="col s3"><p>s12 m4</p></div>
-      <div class="col s3"><p>s12 m4</p></div>
-      <div class="col s3"><p>s12 m4</p></div>
+      <div class="col s3 "><p><img class="materialboxed" src="img/heat.jpg" width="300"></p></div>
+      <div class="col s3"><p><img class="materialboxed" src="img/mb.jpg" width="300"></p></div>
+      <div class="col s3"><p><img class="materialboxed" src="img/PS.jpg" width="300"></p></div>
+      <div class="col s3"><p><img class="materialboxed" src="img/ram.jpg" width="300"></p></div>
     </div>
   </div>
 </div>
