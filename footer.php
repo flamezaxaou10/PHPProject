@@ -10,7 +10,7 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Contact</h5>
                 <ul>
-                  <li><i class="material-icons">call</i><a class="grey-text text-lighten-3" href="#!">&nbsp;&nbsp;&nbsp; +66 XX-XXXX-XXX</a></li>
+                  <li><i class="material-icons" style="font-size:24px; color : #2196f3;">call</i><a class="grey-text text-lighten-3" href="#!">&nbsp;&nbsp;&nbsp; +66 XX-XXXX-XXX</a></li>
                   <li><i class="fa fa-facebook" style="font-size:24px; color : #2196f3;"></i><a class="grey-text text-lighten-3" href="#!">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COM-OUT Official</a></li>
                   <li><i class="fa fa-twitter" style="font-size:24px; color : #2196f3;"></i><a class="grey-text text-lighten-3" href="#!">  &nbsp;&nbsp;&nbsp;&nbsp;COM-OUT Official</a></li>
                   <li><i class="material-icons" style="font-size:24px; color : #2196f3;">email</i><a class="grey-text text-lighten-3" href="#!">  &nbsp;&nbsp;&nbsp;&nbsp;support@com-out.com </a></li>
@@ -20,7 +20,7 @@
           </div>
   <div class="footer-copyright">
     <div class="container">
-        <p class="center-align">© 2014 Copyright COM-OUT.COM</p>
+        <p class="center-align">© 2017 Copyright COM-OUT.COM</p>
     </div>
   </div>
 </footer>
