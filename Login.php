@@ -22,60 +22,81 @@
             <br><br> OR <br>
         </div>
       </div>
-      <div class="row center-align">
-        <div class="row">
-          <div class="col s12 ">
-              <div class="col s4">
+      <form class="" action="#" method="post">
+        <div class="row center-align">
+          <div class="row">
+            <div class="col s12 ">
+                <div class="col s4">
 
-              </div>
-              <div class="input-field col s4">
-                <input name="Username" type="text" class="validate">
-                <label for="Username">Username</label>
-              </div>
-              <div class="col s4">
+                </div>
+                <div class="input-field col s4">
+                  <input name="Username" type="text" class="validate">
+                  <label for="Username">Username</label>
+                </div>
+                <div class="col s4">
 
-              </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s4">
-
-          </div>
-          <div class="input-field col s4">
-            <input name="Password" type="text" class="validate">
-            <label for="Password">Password</label>
-          </div>
-        </div>
-      </div>
-        <div class="row">
-          <div class="col s12 ">
-            <div class="col s4">
-
-            </div>
-            <div class="col s4">
-              <div class="col s6">
-                <a class="waves-effect light-blue btn-large darken-4">Login</a>
-              </div>
-              <div class="col s6">
-                <br>
-                <input type="checkbox" class="filled-in" id="filled-in-box" />
-                <label for="filled-in-box">Stay Login</label>
-              </div>
+                </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
+          <div class="row">
             <div class="col s4">
 
             </div>
             <div class="input-field col s4">
-              <a name="rigerter" href="Register.php" class="wave-effect light-blue btn right darken-4" tabindex="-1">Register?</a><br><br>
-              <a name="forgot_password" href="#" class="wave-effect light-blue btn right grey" tabindex="-1">Forgot Password?</a>
+              <input name="Password" type="password" class="validate">
+              <label for="Password">Password</label>
             </div>
-            <div class="col s4">
-
-            </div>
+          </div>
         </div>
-      </div>
+          <div class="row">
+            <div class="col s12 ">
+              <div class="col s4">
+
+              </div>
+              <div class="col s4">
+                <div class="col s6">
+                  <button class="btn-large waves-effect waves-light #01579b light-blue darken-4 z-depth-4" type="submit" name="action">Login</button>
+                </div>
+                <div class="col s6">
+                  <br>
+                  <input type="checkbox" class="filled-in" id="filled-in-box" />
+                  <label for="filled-in-box">Stay Login</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <div class="col s4">
+
+              </div>
+              <div class="input-field col s4">
+                <a name="rigerter" href="Register.php" class="wave-effect light-blue btn right darken-4" tabindex="-1">Register</a><br><br>
+                <a name="forgot_password" href="#" class="wave-effect light-blue btn right grey" tabindex="-1">Forgot Password?</a>
+              </div>
+              <div class="col s4">
+
+              </div>
+          </div>
+        </div>
+      </form>
 </div>
+<?php include 'footer.php'; ?>
+<?php
+    if ($_POST) {
+      $user = $_POST['Username'];
+      $pass = $_POST['Password'];
+      if ($user == 'admin') {
+
+      }
+      else {
+        $sql = "SELECT * FROM Member";
+        $result = $connect->query($sql);
+        while ($row = $result->fetch_array()) {
+          if ($user == $row['Member_User'] && $pass == $row['Member_Password']) {
+            header("Location:Login/index.php");
+          }
+        }
+      }
+    }
+ ?>

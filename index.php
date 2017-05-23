@@ -1,4 +1,3 @@
-
 <?php include 'header.php' ?>
 <body>
   <div class="container">
@@ -9,29 +8,29 @@
           <li>
             <img clss="responsive-img" src="img/p1.jpg"> <!-- random image -->
             <div class="caption center-align">
-              <h3 class="white-text">This is our big Tagline!</h3>
-              <h5 class="light white-text text-lighten-3">Here's our small slogan.</h5>
+              <h3 class="white-text">Gigabyte Aorus</h3>
+              <h5 class="light white-text text-lighten-3">เย็นและแรงมาพร้อมกับไฟ RGB</h5>
             </div>
           </li>
           <li>
             <img clss="responsive-img" src="img/p2.jpg"> <!-- random image -->
             <div class="caption left-align">
-              <h3 class="white-text">Left Aligned Caption</h3>
-              <h5 class="light white-text text-lighten-3">Here's our small slogan.</h5>
+              <h3 class="white-text">RX 580 SAPPHIRE</h3>
+              <h5 class="light white-text text-lighten-3">Design หรูหรา</h5>
             </div>
           </li>
           <li>
             <img clss="responsive-img" src="img/p3.jpg"> <!-- random image -->
             <div class="caption right-align">
-              <h3 class="white-text">Right Aligned Caption</h3>
-              <h5 class="light white-text text-lighten-3">Here's our small slogan.</h5>
+              <h3 class="white-text">ASUS STRIX 1080 Ti</h3>
+              <h5 class="light white-text text-lighten-3">มาพร้อมไฟ RGB และความแรงเกินคาด!!</h5>
             </div>
           </li>
           <li>
             <img clss="responsive-img" src="img/p4.jpg"> <!-- random image -->
             <div class="caption center-align">
-              <h3 class="white-text">This is our big Tagline!</h3>
-              <h5 class="light white-text text-lighten-3">Here's our small slogan.</h5>
+              <h3 class="white-text">MSI GAMING X GTX 1080</h3>
+              <h5 class="light white-text text-lighten-3">มาพร้อมความเงียบ เย็น และแรงงง</h5>
             </div>
           </li>
         </ul>
