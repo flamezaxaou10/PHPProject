@@ -85,10 +85,12 @@
 <?php include 'footer.php'; ?>
 <?php
     if ($_POST) {
+      $notlog = true;
       $user = $_POST['Username'];
       $pass = $_POST['Password'];
       if ($user == 'admin' && $pass == "1234") {
         $_SESSION['username'] = $user;
+        $notlog = false;
         header("Location:index.php");
       }
       else {
@@ -96,7 +98,9 @@
         $result = $connect->query($sql);
         while ($row = $result->fetch_array()) {
           if ($user == $row['Member_User'] && $pass == $row['Member_Password']) {
-            header("Location:Login/index.php");
+            $_SESSION['username'] = $row['Member_Firstname']." ".$row['Member_Lastname'];
+            $notlog = false;
+            header("Location:index.php");
           }
         }
       }

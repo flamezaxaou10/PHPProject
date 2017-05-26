@@ -12,5 +12,5 @@
     if (!$connect) {
       echo "Not Connect";
     }
-    $chklog;
+    $notlog = true;
  ?>
