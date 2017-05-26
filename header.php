@@ -13,16 +13,31 @@
 </head>
 <body>
     <?php include 'connect.php'; ?>
-    <nav>
-      <div class="nav-wrapper #01579b light-blue darken-4">
-        <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
-          <ul id="nav-mobile" class="right">
-          <li><a href="#"><i class ="medium material-icons">shopping_cart</i></a></li>
-          <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
-          <li><a href="Login.php">Login </a></li>
-        </ul>
-      </div>
-    </nav>
+      <?php if (isset($_SESSION['username'])) : ?>
+        <nav>
+          <div class="nav-wrapper #01579b light-blue darken-4">
+            <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
+              <ul id="nav-mobile" class="right">
+              <li><a href="#"><i class ="medium material-icons">shopping_cart</i></a></li>
+              <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
+              <li><a href="Login.php">Login </a></li>
+            </ul>
+          </div>
+        </nav>
+        <?php if ($_SESSION['username'] == "admin"): ?>
+          <nav>
+            <div class="nav-wrapper #01579b light-blue darken-4">
+              <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
+              <ul id="nav-mobile" class="right">
+                <li><a href="addproduct.php" class="waves-effect waves-light btn-large #1e88e5 blue darken-1"><i class="material-icons left">input</i>Add Product</a></li>
+                <li>Administrator</li>
+                <li><a href="Logout.php">Logout</a></li>
+              </ul>
+            </div>
+          </nav>
+
+        <?php endif; ?>
+      <?php endif; ?>
     <br>
     <div class="container">
       <div class="row">
@@ -41,6 +56,7 @@
         </div>
       </div>
     </div>
+
 
 
 

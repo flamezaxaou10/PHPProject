@@ -53,7 +53,7 @@
         <button class="btn waves-effect waves-light #01579b light-blue darken-4 z-depth-4" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
         </button>
-        <button class="btn waves-effect waves-light #b71c1c red darken-4 z-depth-4" type="reset" name="action">Submit
+        <button class="btn waves-effect waves-light #b71c1c red darken-4 z-depth-4" type="reset" name="action">Reset
                 <i class="material-icons right">settings_backup_restore</i>
         </button>
       </div>

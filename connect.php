@@ -1,5 +1,6 @@
 <?php
     ob_start();
+    session_start();
     $host = "localhost";
     $user = "root";
     $password = "";
@@ -11,4 +12,5 @@
     if (!$connect) {
       echo "Not Connect";
     }
+    $chklog;
  ?>

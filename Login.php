@@ -1,4 +1,5 @@
-<?php include 'header.php' ?>
+
+<?php include 'header.php'; ?>
 <div class="container center-align">
     <div class="col s12 edge">
 			<h4 class="">Login</h4>
@@ -22,7 +23,7 @@
             <br><br> OR <br>
         </div>
       </div>
-      <form class="" action="#" method="post">
+      <form class="" action="" method="post">
         <div class="row center-align">
           <div class="row">
             <div class="col s12 ">
@@ -71,7 +72,7 @@
 
               </div>
               <div class="input-field col s4">
-                <a name="rigerter" href="Register.php" class="wave-effect light-blue btn right darken-4" tabindex="-1">Register</a><br><br>
+                <a name="register" href="Register.php" class="wave-effect light-blue btn right darken-4" tabindex="-1">Register</a><br><br>
                 <a name="forgot_password" href="#" class="wave-effect light-blue btn right grey" tabindex="-1">Forgot Password?</a>
               </div>
               <div class="col s4">
@@ -86,8 +87,9 @@
     if ($_POST) {
       $user = $_POST['Username'];
       $pass = $_POST['Password'];
-      if ($user == 'admin') {
-
+      if ($user == 'admin' && $pass == "1234") {
+        $_SESSION['username'] = $user;
+        header("Location:index.php");
       }
       else {
         $sql = "SELECT * FROM Member";

@@ -1,4 +1,5 @@
 <?php include 'header.php' ?>
+
 <body>
   <div class="container">
     <div class="row">
@@ -45,19 +46,21 @@
     </script>
 
 
-    <div class="row">
+    <div class="row" >
       <div class="col s3 "><p><img class="responsive-img" src="img/cpu.jpg" width="315"></p></div>
       <div class="col s3"><p><img class="responsive-img" src="img/case.jpg" width="315"></p></div>
       <div class="col s3"><p><img class="responsive-img" src="img/fan.jpg" width="315"></p></div>
       <div class="col s3"><p><img class="responsive-img" src="img/gc.jpg" width="315"></p></div>
     </div>
 
-    <div class="row">
+    <div class="row" data-aos="zoom-in">
       <div class="col s3 "><p><img class="responsive-img" src="img/heat.jpg" width="315"></p></div>
       <div class="col s3"><p><img class="responsive-img" src="img/mb.jpg" width="315"></p></div>
       <div class="col s3"><p><img class="responsive-img" src="img/PS.jpg" width="315"></p></div>
       <div class="col s3"><p><img class="responsive-img" src="img/ram.jpg" width="315"></p></div>
     </div>
+
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
   </div>
 </div>
 </body>
