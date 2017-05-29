@@ -8,9 +8,20 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+      <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
       <title>COM-OUT.COM</title>
+      <style media="screen">
+        .container{
+          font-family: 'Paytone One', sans-serif;
+        }
+      </style>
 </head>
+<script type="text/javascript">
+  function cart(){
+    document.getElementById("count").innerHTML =1+parseInt(document.getElementById("count").innerHTML);
+  }
+
+</script>
 <body>
     <?php include 'connect.php'; ?>
     <?php if (isset($_SESSION['username']) && $_SESSION['username'] == "admin"): ?>
@@ -29,9 +40,10 @@
           <div class="nav-wrapper #01579b light-blue darken-4">
             <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
               <ul id="nav-mobile" class="right">
-              <li><a href="#"><i class ="medium material-icons">shopping_cart</i></a></li>
+              <li><a href="#"><i class ="medium material-icons left">shopping_cart</i><span id="count" class="new badge red" data-badge-caption="">0</span></a></li>
               <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
               <li><?php echo $_SESSION['username']; ?></li>
+              <li><a href="setting.php"><i class="medium material-icons left">settings</i>ตั้งค่าบัญชี</a></li>
               <li><a href="Logout.php">Logout</a></li>
             </ul>
           </div>
@@ -41,7 +53,7 @@
             <div class="nav-wrapper #01579b light-blue darken-4">
               <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
                 <ul id="nav-mobile" class="right">
-                <li><a href="#"><i class ="medium material-icons">shopping_cart</i></a></li>
+                <li><a href="#"><i class ="medium material-icons left">shopping_cart</i><span id="count" class="new badge red" data-badge-caption="">0</span></a></li>
                 <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
                 <li><a href="Login.php">Login </a></li>
               </ul>

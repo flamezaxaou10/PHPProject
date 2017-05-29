@@ -99,6 +99,8 @@
         while ($row = $result->fetch_array()) {
           if ($user == $row['Member_User'] && $pass == $row['Member_Password']) {
             $_SESSION['username'] = $row['Member_Firstname']." ".$row['Member_Lastname'];
+            $_SESSION['user'] = $row['Member_User'];
+            $_SESSION['cart'] = 0;
             $notlog = false;
             header("Location:index.php");
           }

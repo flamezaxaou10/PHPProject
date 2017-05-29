@@ -19,12 +19,12 @@
 ?>
     <a href="product.php?ID=<?php echo $row['Product_ID']; ?>">
       <div class="col s3 center">
-        <div class="card hoverable">
+        <div class="card hoverable ">
           <div class="card-image">
             <img src="<?php echo $row['Product_IMG']; ?>" height="250px">
-            <a class="halfway-fab btn-floating btn-large right waves-effect waves-light #42a5f5 blue lighten-1 pulse"><i class="material-icons left">shopping_cart</i></a>
+            <a class="halfway-fab btn-floating btn-large right waves-effect waves-light #42a5f5 blue lighten-1 pulse" onclick="cart();"><i class="material-icons left">shopping_cart</i></a>
           </div>
-          <div class="card-content">
+          <div class="card-content" style="height:150px;">
             <span class="card-title center-align"><?php echo $row['Product_Name']; ?></span>
             <p><?php echo $row['Product_Price']." ฿"; ?></p>
           </div>

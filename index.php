@@ -47,14 +47,14 @@
 
 
     <div class="row">
-      <div class="col s4"><a href="main.php?ID=T001"><img class="responsive-img hoverable" src="img/cpu.jpg" width="400"></a></div>
-      <div class="col s4"><a href="main.php?ID=T003"><img class="responsive-img hoverable" src="img/case.jpg" width="400"></a></div>
-      <div class="col s4"><a href="main.php?ID=T005"><img class="responsive-img hoverable" src="img/fan.jpg" width="400"></a></div>
-      <div class="col s4"><a href="main.php?ID=T002"><img class="responsive-img hoverable" src="img/gc.jpg" width="400"></a></div>
-      <div class="col s4"><a href="main.php?ID=T008"><img class="responsive-img hoverable" src="img/heat.jpg" width="400"></a></div>
-      <div class="col s4"><a href="main.php?ID=T004"><img class="responsive-img hoverable" src="img/mb.jpg" width="400"></a></div>
-      <div class="col s4"><a href="main.php?ID=T007"><img class="responsive-img hoverable" src="img/PS.jpg" width="400"></a></div>
-      <div class="col s4"><a href="main.php?ID=T006"><img class="responsive-img hoverable" src="img/ram.jpg" width="400"></a></div>
+      <div class="col s3"><a href="main.php?ID=T001"><img class="responsive-img hoverable" src="img/cpu.jpg" width="400"></a></div>
+      <div class="col s3"><a href="main.php?ID=T003"><img class="responsive-img hoverable" src="img/case.jpg" width="400"></a></div>
+      <div class="col s3"><a href="main.php?ID=T005"><img class="responsive-img hoverable" src="img/fan.jpg" width="400"></a></div>
+      <div class="col s3"><a href="main.php?ID=T002"><img class="responsive-img hoverable" src="img/gc.jpg" width="400"></a></div>
+      <div class="col s3"><a href="main.php?ID=T008"><img class="responsive-img hoverable" src="img/heat.jpg" width="400"></a></div>
+      <div class="col s3"><a href="main.php?ID=T004"><img class="responsive-img hoverable" src="img/mb.jpg" width="400"></a></div>
+      <div class="col s3"><a href="main.php?ID=T007"><img class="responsive-img hoverable" src="img/PS.jpg" width="400"></a></div>
+      <div class="col s3"><a href="main.php?ID=T006"><img class="responsive-img hoverable" src="img/ram.jpg" width="400"></a></div>
     </div>
 
   </div>
