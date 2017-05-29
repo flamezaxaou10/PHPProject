@@ -89,7 +89,7 @@
       $user = $_POST['Username'];
       $pass = $_POST['Password'];
       if ($user == 'admin' && $pass == "1234") {
-        $_SESSION['username'] = $user;
+        $_SESSION['user'] = $user;
         $notlog = false;
         header("Location:index.php");
       }
@@ -100,7 +100,8 @@
           if ($user == $row['Member_User'] && $pass == $row['Member_Password']) {
             $_SESSION['username'] = $row['Member_Firstname']." ".$row['Member_Lastname'];
             $_SESSION['user'] = $row['Member_User'];
-            $_SESSION['cart'] = 0;
+            $_SESSION['count'] = 0;
+            $_SESSION['cart'] = array();
             $notlog = false;
             header("Location:index.php");
           }

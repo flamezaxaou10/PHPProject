@@ -19,12 +19,19 @@
 <script type="text/javascript">
   function cart(){
     document.getElementById("count").innerHTML =1+parseInt(document.getElementById("count").innerHTML);
-  }
+    var str="cart.php";
+      $.ajax({
+        type: 'POST',
+        url: str,
+        data: { Product_ID: id },
+        success: function(response) {}
+      });
 
+  }
 </script>
 <body>
     <?php include 'connect.php'; ?>
-    <?php if (isset($_SESSION['username']) && $_SESSION['username'] == "admin"): ?>
+    <?php if (isset($_SESSION['user']) && $_SESSION['user'] == "admin"): ?>
       <nav>
         <div class="nav-wrapper #01579b light-blue darken-4">
           <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
@@ -35,12 +42,12 @@
           </ul>
         </div>
       </nav>
-      <?php elseif (isset($_SESSION['username'])) : ?>
+    <?php elseif (isset($_SESSION['user'])) : ?>
         <nav>
           <div class="nav-wrapper #01579b light-blue darken-4">
             <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
               <ul id="nav-mobile" class="right">
-              <li><a href="#"><i class ="medium material-icons left">shopping_cart</i><span id="count" class="new badge red" data-badge-caption="">0</span></a></li>
+              <li><a href="paidcart.php?ID=<?php echo $_SESSION['user']; ?>"><i class ="medium material-icons left">shopping_cart</i><span id="count" class="new badge red" data-badge-caption=""><?php echo $_SESSION['count']; ?></span></a></li>
               <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
               <li><?php echo $_SESSION['username']; ?></li>
               <li><a href="setting.php"><i class="medium material-icons left">settings</i>ตั้งค่าบัญชี</a></li>

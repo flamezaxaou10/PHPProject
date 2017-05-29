@@ -98,6 +98,7 @@
                                   Product_IMG = '$insert_picture'
                                   WHERE Product_ID = '$ID'";
       $connect->query($sql);
+      header("Location:product.php?ID=$ID");
     }
 
  ?>

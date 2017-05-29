@@ -30,11 +30,11 @@
         จำนวนสินค้า : <?php echo $row['Product_QTY']; ?>
       </p>
       <div class="left">
-        <a class="waves-effect waves-light btn-large #1e88e5 blue darken-1" onclick="cart();"><i class="material-icons left" >shopping_cart</i>หยิบใส่ตระกร้า</a>
+        <a class="waves-effect waves-light btn-large #1e88e5 blue darken-1"  onclick="cart();" href="cart.php?ID=<?php echo $ID; ?>"><i class="material-icons left" >shopping_cart</i>หยิบใส่ตระกร้า</a>
       </div>
     </div>
     <div class="col s3">
-      <?php if ($_SESSION['username'] == 'admin'): ?>
+      <?php if ($_SESSION['user'] == 'admin'): ?>
         <div class="row">
           <div class="left col s12">
             <a class="waves-effect waves-light btn-large #e53935 red darken-1" href="deleteproduct.php?ID=<?php echo $ID; ?>"><i class="material-icons left" >shopping_cart</i>ลบข้อมูล</a>
@@ -46,6 +46,7 @@
           </div>
         </div>
       <?php endif; ?>
+      <img src="img/pool.jpg" alt="">
     </div>
   </div>
   <div class="row">
