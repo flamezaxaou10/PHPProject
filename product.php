@@ -37,12 +37,12 @@
       <?php if ($_SESSION['user'] == 'admin'): ?>
         <div class="row">
           <div class="left col s12">
-            <a class="waves-effect waves-light btn-large #e53935 red darken-1" href="deleteproduct.php?ID=<?php echo $ID; ?>"><i class="material-icons left" >shopping_cart</i>ลบข้อมูล</a>
+            <a class="waves-effect waves-light btn-large #e53935 red darken-1" href="deleteproduct.php?ID=<?php echo $ID; ?>"><i class="material-icons left" >delete</i>ลบข้อมูล</a>
           </div>
         </div>
         <div class="row">
           <div class="left col s12">
-            <a class="waves-effect waves-light btn-large #90caf9 blue lighten-3" href="editproduct.php?ID=<?php echo $ID; ?>"><i class="material-icons left">shopping_cart</i>แก้ไปข้อมูลสินค้า</a>
+            <a class="waves-effect waves-light btn-large #90caf9 blue lighten-3" href="editproduct.php?ID=<?php echo $ID; ?>"><i class="material-icons left">mode_edit</i>แก้ไปข้อมูลสินค้า</a>
           </div>
         </div>
       <?php endif; ?>
