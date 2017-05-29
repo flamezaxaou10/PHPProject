@@ -8,24 +8,64 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
       <title>COM-OUT.COM</title>
+      <style media="screen">
+        .container{
+          font-family: 'Paytone One', sans-serif;
+        }
+      </style>
 </head>
-<body>
+<script type="text/javascript">
+  function cart(){
+    document.getElementById("count").innerHTML =1+parseInt(document.getElementById("count").innerHTML);
+  }
 
-    <nav>
-      <div class="nav-wrapper #29b6f6 light-blue lighten-1">
-        <a href="#" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">Login</a></li>
-        </ul>
-      </div>
-    </nav>
+</script>
+<body>
+    <?php include 'connect.php'; ?>
+    <?php if (isset($_SESSION['username']) && $_SESSION['username'] == "admin"): ?>
+      <nav>
+        <div class="nav-wrapper #01579b light-blue darken-4">
+          <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
+          <ul id="nav-mobile" class="right">
+            <li><a href="addproduct.php" class="waves-effect waves-light btn-large #1e88e5 blue darken-1"><i class="material-icons left">input</i>Add Product</a></li>
+            <li>Administrator</li>
+            <li><a href="Logout.php">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+      <?php elseif (isset($_SESSION['username'])) : ?>
+        <nav>
+          <div class="nav-wrapper #01579b light-blue darken-4">
+            <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
+              <ul id="nav-mobile" class="right">
+              <li><a href="#"><i class ="medium material-icons left">shopping_cart</i><span id="count" class="new badge red" data-badge-caption="">0</span></a></li>
+              <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
+              <li><?php echo $_SESSION['username']; ?></li>
+              <li><a href="setting.php"><i class="medium material-icons left">settings</i>ตั้งค่าบัญชี</a></li>
+              <li><a href="Logout.php">Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+      <?php elseif (isset($notlog) && $notlog) : ?>
+          <nav>
+            <div class="nav-wrapper #01579b light-blue darken-4">
+              <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
+                <ul id="nav-mobile" class="right">
+                <li><a href="#"><i class ="medium material-icons left">shopping_cart</i><span id="count" class="new badge red" data-badge-caption="">0</span></a></li>
+                <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
+                <li><a href="Login.php">Login </a></li>
+              </ul>
+            </div>
+          </nav>
+      <?php endif; ?>
     <br>
     <div class="container">
       <div class="row">
         <div class="col s12">
           <nav>
-            <div class="nav-wrapper #29b6f6 light-blue lighten-1">
+            <div class="nav-wrapper #01579b light-blue darken-4">
               <form>
                 <div class="input-field">
                   <input id="search" type="search" required>
@@ -42,12 +82,8 @@
 
 
 
-
-
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
   </body>
 </html>
-
-    <!-- Dropdown Structure -->
