@@ -87,6 +87,6 @@ function checkLoginState() {
         $_SESSION['username'] = $fbName;
         $_SESSION['count'] = 0;
         $_SESSION['cart'] = array();
-
+        header("Location:index.php");
       }
      ?>
