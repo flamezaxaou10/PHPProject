@@ -6,6 +6,23 @@
                 <h5 class="white-text">บริการลูกค้า</h5>
                 <p class="grey-text text-lighten-4">COM-OUT คือ ร้านค้าออนไลน์ที่ จัดส่งสินค้ารวดเร็ว เชื่อถือได้ และมอบความสะดวกสบายในการเลือกซื้อสินค้าแก่ลูกค้า
                                                   ด้วยการนำเสนอสินค้ามากมายหลากหลายชนิด พวกเราพร้อมมอบสิ่งที่ดีที่สุด ให้แก่ลูกค้าเสมอ ไม่ว่าจะเป็นวิธีการชำระเงินปลายทาง หรือบริการการคืนสินค้าฟรี และศูนย์บริการลูกค้าที่พร้อมจะให้คำแนะนำตลอดการเลือกซื้อสินค้า</p>
+                <a class="modal-trigger waves-effect waves-light btn #64b5f6 blue lighten-2" href="#modal1">วิธีการชำระเงิน</a>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal modal-fixed-footer">
+                  <div class="modal-content">
+                    <h4>การชำระเงิน</h4>
+                    <p>A bunch of text</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                  </div>
+                </div>
+                <script type="text/javascript">
+                  $(document).ready(function(){
+                    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                    $('.modal').modal();
+                  });
+                </script>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Contact</h5>

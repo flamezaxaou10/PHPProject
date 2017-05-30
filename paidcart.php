@@ -23,7 +23,7 @@
 
                     ?>
                           <p>
-                            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" name ="Add" value="<?php echo  $i." : ".$row['Add_M']." ".$row['Add_T']." ".$row['Add_S']." ".$row['Add_C']." ".$row['Add_Z'];?>"/>
+                            <input type="checkbox" class="filled-in" id="filled-in-box" required checked="checked" name ="Add" value="<?php echo  $i." : ".$row['Add_M']." ".$row['Add_T']." ".$row['Add_S']." ".$row['Add_C']." ".$row['Add_Z'];?>" />
                             <label for="filled-in-box" class="black-text"> ที่อยู่ที <?php echo  $i." : ".$row['Add_M']." ".$row['Add_T']." ".$row['Add_S']." ".$row['Add_C']." ".$row['Add_Z'];?></label>
                           </p> <br>
                     <?php
@@ -134,7 +134,7 @@
       $Report_Price = $row['Product_Price'];
       $QTY = $row['Product_QTY'];
       $Date = date("Y-m-d h:i:sa");
-      $sqlin = "INSERT INTO report (Member_User,Product_ID,Report_Price,Address,Date,Status) VALUES ('$ID','$PID','$Report_Price','$Add','$Date','no')";
+      $sqlin = "INSERT INTO report (Member_User,Product_ID,Report_Price,Address,Date,Status) VALUES ('$ID','$PID','$Report_Price','$Add','$Date','No')";
       $resultin = $connect->query($sqlin);
       $QTY -= 1;
       $update = "UPDATE product SET Product_QTY = '$QTY' WHERE Product_ID = '$PID'";

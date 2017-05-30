@@ -28,23 +28,23 @@
                   <div class="row">
                     <div class="input-field col s6">
                       <input  name="User" type="text" class="validate" value=<?php echo $row['Member_User']; ?> readonly>
-                      <label for="first_name">Username</label>
+                      <label for="User">Username</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s6">
-                      <input  name="first_name" type="text" class="validate" required value=<?php echo $row['Member_Firstname']; ?>>
+                      <input  name="Firstname" type="text" class="validate" required value=<?php echo $row['Member_Firstname']; ?>>
                       <label for="first_name">First Name</label>
                     </div>
                     <div class="input-field col s6">
-                      <input name="last_name" type="text" class="validate" required value=<?php echo $row['Member_Lastname']; ?>>
-                      <label for="last_name">Last Name</label>
+                      <input name="Lastname" type="text" class="validate" required value=<?php echo $row['Member_Lastname']; ?>>
+                      <label for="Lastname">Last Name</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="email" type="email" class="validate" required value=<?php echo $row['Member_Email']; ?>>
-                      <label for="email">Email</label>
+                      <input name="Email" type="email" class="validate" required value=<?php echo $row['Member_Email']; ?>>
+                      <label for="Email">Email</label>
                     </div>
                   </div>
                   <div class="row">
@@ -94,17 +94,17 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s6">
-                      <input name="Add_S" type="email" class="validate" required>
+                      <input name="Add_S" type="text" class="validate" required>
                       <label for="Add_S">อำเภอ</label>
                     </div>
                     <div class="input-field col s6">
-                      <input name="Add_C" type="email" class="validate" required>
+                      <input name="Add_C" type="text" class="validate" required>
                       <label for="Add_C">จังหวัด</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s6">
-                      <input name="Add_Z" type="email" class="validate" required>
+                      <input name="Add_Z" type="text" class="validate" required>
                       <label for="Add_Z">รหัสไปรษณีย์</label>
                     </div>
                   </div>
@@ -118,8 +118,34 @@
                 </form>
               </div>
             </div>
-
-
+          <?php elseif ($_GET['Acc'] == '3'): ?>
+            <div class="row">
+              <div class="col s8">
+                <div class="row">
+                  <div class="input-field col s9">
+                    <input name="password" type="password" class="validate" required>
+                    <label for="password">Current Password</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s9">
+                    <input name="password" type="password" class="validate" required>
+                    <label for="password">New Password</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s9">
+                    <input name="Con-password" type="password" class="validate" required>
+                    <label for="Confirm-password">Confirm-password</label>
+                  </div>
+                </div>
+                <div class="col s12 center-align">
+                  <button class="btn waves-effect waves-light #01579b light-blue darken-4 z-depth-4" type="submit" name="action">เปลี่ยนพาสเวิร์ด
+                          <i class="material-icons right">save</i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         <?php endif; ?>
       <?php endif; ?>
@@ -130,9 +156,33 @@
 
 <?php if ($_POST) {
     if ($_GET['Acc'] == '1') {
-
+      $username = $_POST['User'];
+      $Firstname = $_POST['Firstname'];
+      $Lastname = $_POST['Lastname'];
+      $Email = $_POST['Email'];
+      $sql = "UPDATE member SET Member_Firstname = '$Firstname',
+                                Member_Lastname = '$Lastname',
+                                Member_Email = '$Email'
+                                WHERE Member_User = '$username'";
+      $connect->query($sql);
     }
     elseif ($_GET['Acc'] == '2') {
+      $Add_M = $_POST['Add_M'];
+      $Add_T = $_POST['Add_T'];
+      $Add_S = $_POST['Add_S'];
+      $Add_C = $_POST['Add_C'];
+      $Add_Z = $_POST['Add_Z'];
+      $sql = "INSERT INTO address (Member_User,Add_M,Add_T,Add_S,Add_C,Add_Z) VALUES ('$username','$Add_M','$Add_T','$Add_S','$Add_C','$Add_Z')";
+      $connect->query($sql);
+    }
+    elseif ($_GET['Acc'] == '3') {
 
+      $sql = "INSERT INTO address (Member_User,Add_M,Add_T,Add_S,Add_C,Add_Z) VALUES ('$username','$Add_M','$Add_T','$Add_S','$Add_C','$Add_Z')";
+      $connect->query($sql);
     }
 } ?>
+ <?php if ($_POST): ?>
+   <script type="text/javascript">
+     Materialize.toast('ทำรายการสำเร็จ!', 4000)
+   </script>
+ <?php endif; ?>

@@ -6,12 +6,12 @@
 </script>
 <div class="container">
   <div class="row">
-    <form class="" action="index.html" method="post">
+    <form class="" action="#" method="POST">
       <h4>รายการสั่งสินค้า</h4>
       <div class="input-field col s10">
         <select class="" name="stat">
-          <option value="yes">ชำระเงินแล้ว</option>
-          <option value="no">ยังไม่ได้ชำระเงิน</option>
+          <option value="Yes">ชำระเงินแล้ว</option>
+          <option value="No">ยังไม่ได้ชำระเงิน</option>
         </select>
         <label>เลือกข้อมูลการแสดงผล</label>
       </div>
@@ -23,28 +23,42 @@
       </div>
     </form>
   </div>
-  <div class="row">
-    <div class="col s12">
-      <table>
-          <thead>
-            <tr>
-                <th>Username</th>
-                <th>Product</th>
-                <th>QTY</th>
-                <th>Price</th>
-                <th>Address</th>
-                <th>Date</th>
-                <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-              $sql = "SELECT * FROM report ORDER BY Date DESC"
-             ?>
-
-          </tbody>
-        </table>
-    </div>
+  <?php if ($_POST): ?>
+    <div class="row">
+      <div class="col s12">
+        <table>
+            <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Address</th>
+                  <th>Date</th>
+                  <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $stat = $_POST['stat'];
+                $sql = "SELECT * FROM report JOIN product ON product.Product_ID = report.Product_ID JOIN member ON report.Member_User = member.Member_User  WHERE Status = '$stat'";
+                $result = $connect->query($sql);
+                while ($row = $result->fetch_array()) {
+              ?>
+                  <tr>
+                    <td><?php echo $row['Member_Firstname']." ".$row['Member_Lastname']; ?></td>
+                    <td><?php echo $row['Product_Name']; ?></td>
+                    <td><?php echo $row['Report_Price']; ?></td>
+                    <td><?php echo $row['Address']; ?></td>
+                    <td><?php echo $row['Date']; ?></td>
+                    <td><a href="paid.php?ID=<?php echo $row['Report_ID']; ?>"><?php echo $row['Status']; ?></a></td>
+                  </tr>
+              <?php
+                }
+               ?>
+            </tbody>
+          </table>
+      </div>
+  <?php endif; ?>
   </div>
 </div>
 <?php include 'footer.php'  ?>
