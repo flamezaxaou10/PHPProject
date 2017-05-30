@@ -36,6 +36,7 @@
         <div class="nav-wrapper #01579b light-blue darken-4">
           <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
           <ul id="nav-mobile" class="right">
+            <li><a href="report.php" class="waves-effect waves-light btn-large #1e88e5 blue darken-1"><i class="material-icons left">list</i>รายการสินค้า</a></li>
             <li><a href="addproduct.php" class="waves-effect waves-light btn-large #1e88e5 blue darken-1"><i class="material-icons left">input</i>Add Product</a></li>
             <li>Administrator</li>
             <li><a href="Logout.php">Logout</a></li>
