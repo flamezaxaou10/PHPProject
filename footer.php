@@ -11,7 +11,7 @@
                 <div id="modal1" class="modal modal-fixed-footer">
                   <div class="modal-content">
                     <h4>การชำระเงิน</h4>
-                    <p>A bunch of text</p>
+                    <p><img src="img/money.jpg" alt="" height="auto"></p>
                   </div>
                   <div class="modal-footer">
                     <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>

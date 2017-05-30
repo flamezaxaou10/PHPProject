@@ -10,30 +10,30 @@
           <div class="col s12">
             <div class="row">
               <div class="col s12">
+                <?php
+                    $ID = $_GET['ID'];
+                    $sql = "SELECT * FROM address WHERE Member_User = '$ID'";
+                    $result = $connect->query($sql);
+                    $result = $connect->query($sql);
+                    $i = 1;
+                    while ($row = $result->fetch_array()){
+
+                ?>
                 <div class="card white hoverable">
                   <div class="card-content black-text">
                     <span class="card-title">ที่อยู่</span>
-                    <?php
-                        $ID = $_GET['ID'];
-                        $sql = "SELECT * FROM address WHERE Member_User = '$ID'";
-                        $result = $connect->query($sql);
-                        $result = $connect->query($sql);
-                        $i = 1;
-                        while ($row = $result->fetch_array()){
-
-                    ?>
                           <p>
-                            <input type="checkbox" class="filled-in" id="filled-in-box" required checked="checked" name ="Add" value="<?php echo  $i." : ".$row['Add_M']." ".$row['Add_T']." ".$row['Add_S']." ".$row['Add_C']." ".$row['Add_Z'];?>" />
-                            <label for="filled-in-box" class="black-text"> ที่อยู่ที <?php echo  $i." : ".$row['Add_M']." ".$row['Add_T']." ".$row['Add_S']." ".$row['Add_C']." ".$row['Add_Z'];?></label>
+                            <input type="checkbox" class="filled-in" id="filled-in-box<?php echo $i?>" required  name ="Add" value="<?php echo $i." : ".$row['Add_M']." ".$row['Add_T']." ".$row['Add_S']."".$row['Add_C'].$row['Add_Z']; ?>"/>
+                            <label for="filled-in-box<?php echo $i?>" class="black-text"> ที่อยู่ที <?php echo  $i." : ".$row['Add_M']." ".$row['Add_T']." ".$row['Add_S']." ".$row['Add_C']." ".$row['Add_Z']; ?></label>
                           </p> <br>
-                    <?php
-                          $i++;
-                        }
-                     ?>
                 </div>
               </div>
+              <?php
+                    $i++;
+                  }
+               ?>
             </div>
-        </div>
+          </div>
           </div>
         </div>
       </div>
@@ -148,7 +148,7 @@
     <div id="modal1" class="modal modal-fixed-footer">
       <div class="modal-content">
         <h4>การชำระเงิน</h4>
-        <p>A bunch of text</p>
+        <p><img src="img/money.jpg" alt=""></p>
       </div>
       <div class="modal-footer">
         <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>

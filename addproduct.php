@@ -13,11 +13,11 @@
     </div>
     <div class="row">
       <div class="col s6 center-align">
-          <div class="col s6 input-field">
+          <!-- <div class="col s6 input-field">
             <input name="Product_ID" type="text" class="validate" required>
             <label for="รหัสสินค้า">รหัสสินค้า</label>
-          </div>
-          <div class="col s6 input-field">
+          </div> -->
+          <div class="col s12 input-field">
             <input name="Product_Name" type="text" class="validate" required>
             <label for="ชื่อสินค้า">ชื่อสินค้า</label>
           </div>
@@ -101,7 +101,7 @@
 <?php include 'footer.php'; ?>
 <?php
   if($_POST){
-    $Product_ID = $_POST['Product_ID'];
+    // $Product_ID = $_POST['Product_ID'];
     $Product_Name = $_POST['Product_Name'];
     $Product_Price = $_POST['Product_Price'];
     $Product_QTY = $_POST['Product_QTY'];
@@ -119,8 +119,8 @@
       echo "Add Complete";
     }
 
-    $sql = "INSERT INTO product (Product_ID,Product_Name,Product_Price,Product_QTY,Product_Title,Product_Detail,Product_IMG,Type_ID,Band_ID)
-            VALUES ('$Product_ID','$Product_Name','$Product_Price','$Product_QTY','$Product_Title','$Product_Detail','$insert_picture','$Type_ID','$Band_ID');";
+    $sql = "INSERT INTO product (Product_Name,Product_Price,Product_QTY,Product_Title,Product_Detail,Product_IMG,Type_ID,Band_ID)
+            VALUES ('$Product_Name','$Product_Price','$Product_QTY','$Product_Title','$Product_Detail','$insert_picture','$Type_ID','$Band_ID');";
     $connect->query($sql);
 
 

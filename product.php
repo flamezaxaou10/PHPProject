@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="col s3">
-      <?php if ($_SESSION['user'] == 'admin'): ?>
+      <?php if (isset($_SESSION['user'])&&$_SESSION['user'] == 'admin'): ?>
         <div class="row">
           <div class="left col s12">
             <a class="waves-effect waves-light btn-large #e53935 red darken-1" href="deleteproduct.php?ID=<?php echo $ID; ?>"><i class="material-icons left" >delete</i>ลบข้อมูล</a>

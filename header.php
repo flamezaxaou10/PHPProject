@@ -31,6 +31,7 @@
 </script>
 <body>
     <?php include 'connect.php'; ?>
+    <?php include 'facebook.php'; ?>
     <?php if (isset($_SESSION['user']) && $_SESSION['user'] == "admin"): ?>
       <nav>
         <div class="nav-wrapper #01579b light-blue darken-4">
@@ -49,9 +50,9 @@
             <a href="index.php" class="brand-logo"><img src="img/logo1.png" alt="" style="width:60%;"></a>
               <ul id="nav-mobile" class="right">
               <li><a href="paidcart.php?ID=<?php echo $_SESSION['user']; ?>"><i class ="medium material-icons left">shopping_cart</i><span id="count" class="new badge red" data-badge-caption=""><?php echo $_SESSION['count']; ?></span></a></li>
-              <li><a href="#"><i class ="medium material-icons">payment</i></a></li>
+              <li><a href="myproduct.php"><i class ="medium material-icons left">shop</i>สินค้าของฉัน</a></li>
               <li><?php echo $_SESSION['username']; ?></li>
-              <li><a href="setting.php"><i class="medium material-icons left">settings</i>ตั้งค่าบัญชี</a></li>
+              <li><a href="setting.php?Acc=1"><i class="medium material-icons left">settings</i>ตั้งค่าบัญชี</a></li>
               <li><a href="Logout.php">Logout</a></li>
             </ul>
           </div>

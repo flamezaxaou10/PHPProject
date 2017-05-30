@@ -70,6 +70,7 @@
         $sql = "INSERT INTO member (Member_User,Member_Password,Member_Firstname,Member_Lastname,Member_Email) ";
         $sql .= "VALUES ('$Username','$password','$first_name','$last_name','$email')";
         $connect->query($sql);
+        header("Location:Login.php");
         if ($connect->query($sql)) {
           echo "Error";
         }

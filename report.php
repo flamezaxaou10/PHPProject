@@ -29,6 +29,7 @@
         <table>
             <thead>
               <tr>
+                  <th>รหัสการสั่งซื้อ</th>
                   <th>Name</th>
                   <th>Product</th>
                   <th>Price</th>
@@ -45,6 +46,7 @@
                 while ($row = $result->fetch_array()) {
               ?>
                   <tr>
+                    <td>#<?php echo $row['Report_ID']; ?></td>
                     <td><?php echo $row['Member_Firstname']." ".$row['Member_Lastname']; ?></td>
                     <td><?php echo $row['Product_Name']; ?></td>
                     <td><?php echo $row['Report_Price']; ?></td>

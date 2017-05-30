@@ -13,6 +13,7 @@
          <li class="collection-item"><a href="?Acc=3">เปลี่ยนรหัสผ่าน</a></li>
         </ul>
       </div>
+      <?php $username = $_SESSION['user']; ?>
       <?php if (isset($_GET['Acc'])): ?>
         <?php if ($_GET['Acc'] == '1'): ?>
           <div class="col s9">
@@ -120,31 +121,33 @@
             </div>
           <?php elseif ($_GET['Acc'] == '3'): ?>
             <div class="row">
-              <div class="col s8">
-                <div class="row">
-                  <div class="input-field col s9">
-                    <input name="password" type="password" class="validate" required>
-                    <label for="password">Current Password</label>
+              <form class="" action="?Acc=3" method="post">
+                <div class="col s8">
+                  <div class="row">
+                    <div class="input-field col s9">
+                      <input name="password" type="password" class="validate" required>
+                      <label for="password">Current Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s9">
+                      <input name="newpassword" type="password" class="validate" required>
+                      <label for="newpassword">New Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s9">
+                      <input name="conpassword" type="password" class="validate" required>
+                      <label for="Confirm-password">Confirm-password</label>
+                    </div>
+                  </div>
+                  <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light #01579b light-blue darken-4 z-depth-4" type="submit" name="action">เปลี่ยนพาสเวิร์ด
+                            <i class="material-icons right">save</i>
+                    </button>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="input-field col s9">
-                    <input name="password" type="password" class="validate" required>
-                    <label for="password">New Password</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s9">
-                    <input name="Con-password" type="password" class="validate" required>
-                    <label for="Confirm-password">Confirm-password</label>
-                  </div>
-                </div>
-                <div class="col s12 center-align">
-                  <button class="btn waves-effect waves-light #01579b light-blue darken-4 z-depth-4" type="submit" name="action">เปลี่ยนพาสเวิร์ด
-                          <i class="material-icons right">save</i>
-                  </button>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         <?php endif; ?>
@@ -165,6 +168,7 @@
                                 Member_Email = '$Email'
                                 WHERE Member_User = '$username'";
       $connect->query($sql);
+      header("Location:setting.php?Acc=1");
     }
     elseif ($_GET['Acc'] == '2') {
       $Add_M = $_POST['Add_M'];
@@ -174,14 +178,25 @@
       $Add_Z = $_POST['Add_Z'];
       $sql = "INSERT INTO address (Member_User,Add_M,Add_T,Add_S,Add_C,Add_Z) VALUES ('$username','$Add_M','$Add_T','$Add_S','$Add_C','$Add_Z')";
       $connect->query($sql);
+      header("Location:setting.php?Acc=2");
     }
     elseif ($_GET['Acc'] == '3') {
+      $cpassword = $_POST['password'];
+      $newpassword = $_POST['newpassword'];
+      $conpassword = $_POST['conpassword'];
+      if ($newpassword == $conpassword) {
+        $sql = "UPDATE member SET Member_Password = '$newpassword' WHERE Member_User = '$username'";
+        $connect->query($sql);
+      }
+      else {
+        echo "<script type=\"text/javascript\">
+                Materialize.toast('รหัสผ่านไม่ตรงกัน!', 4000)
+              </script>";
+      }
 
-      $sql = "INSERT INTO address (Member_User,Add_M,Add_T,Add_S,Add_C,Add_Z) VALUES ('$username','$Add_M','$Add_T','$Add_S','$Add_C','$Add_Z')";
-      $connect->query($sql);
     }
 } ?>
- <?php if ($_POST): ?>
+ <?php if ($_POST && ($_GET['Acc'] == '1' || $_GET['Acc'] == '2')): ?>
    <script type="text/javascript">
      Materialize.toast('ทำรายการสำเร็จ!', 4000)
    </script>
