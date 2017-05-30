@@ -60,4 +60,22 @@
     </form>
   </div>
   <br><br>
+  <?php
+      if ($_POST) {
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $Username = $_POST['Username'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        $sql = "INSERT INTO member (Memver_User,Member_Password,Member_Firstname,Member_Lastname,Member_Email) ";
+        $sql .= "VALUES ('$Username','$password','$first_name','$last_name','$email')";
+        $connect->query($sql);
+        if ($connect->query($sql)) {
+          echo "Error";
+        }
+        /*echo "<script type=\ "text/javascript\">
+              alert(\ "Insert Successfully");
+              </script>";*/
+      }
+   ?>
   <?php include 'footer.php' ?>
