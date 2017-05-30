@@ -18,7 +18,7 @@
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.9&appId=137059933509479";
+     js.src = "//connect.facebook.net/th_TH/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
@@ -52,16 +52,12 @@ function getCurrentUserInfo() {
 
 	  fbName = userInfo.name;
 	  fbEmail = userInfo.email;
+	  	$("#hdnFbID").val(fbID);
+		$("#hdnName ").val(fbName);
+		$("#hdnEmail").val(fbEmail);
+		$("#frmMain").submit();
 
-	  alert(fbID);
-	  alert(fbName);
-	  alert(fbEmail);
 
-    <?php
-
-      $sql = "INSERT INTO member (Member_User,Member_Firstname,Member_Email) VALUES ();";
-      $connect->query($sql);
-     ?>
 
   });
 }
@@ -74,3 +70,23 @@ function checkLoginState() {
 
 
 </script>
+
+<form action="#" method="post" name="frmMain" id="frmMain">
+	<input type="hidden" id="hdnFbID" name="hdnFbID">
+	<input type="hidden" id="hdnName" name="hdnName">
+	<input type="hidden" id="hdnEmail" name="hdnEmail">
+</form>
+    <?php
+      if($_POST){
+        $fbID = $_POST['hdnFbID'];
+        $fbName = $_POST['hdnName'];
+        $fbEmail = $_POST['hdnEmail'];
+        $sql = "INSERT INTO member (Member_User,Member_Firstname,Member_Email) VALUES ('$fbID','$fbName','$fbEmail');";
+        $connect->query($sql);
+        $_SESSION['user'] = $fbID;
+        $_SESSION['username'] = $fbName;
+        $_SESSION['count'] = 0;
+        $_SESSION['cart'] = array();
+
+      }
+     ?>
