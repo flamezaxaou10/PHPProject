@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+      <meta charset="utf-8">
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -31,7 +32,6 @@
 </script>
 <body>
     <?php include 'connect.php'; ?>
-    <?php include 'facebook.php'; ?>
     <?php if (isset($_SESSION['user']) && $_SESSION['user'] == "admin"): ?>
       <nav>
         <div class="nav-wrapper #01579b light-blue darken-4">
@@ -70,7 +70,7 @@
           </nav>
       <?php endif; ?>
     <br>
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col s12">
           <nav>
@@ -86,7 +86,7 @@
           </nav>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 

@@ -1,1 +1,10 @@
-AMD Radeon™ RX 460 2GB
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
